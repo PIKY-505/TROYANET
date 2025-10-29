@@ -478,49 +478,7 @@ img {
   border-left-color: var(--kali-yellow);
 }
 
-/* --- 
-   Responsive de la Agenda [cite: 25] 
-   En móviles, la cuadrícula 4-columnas no funciona.
-   La apilamos y usamos el 'time-slot' como cabecera.
---- */
-@media (max-width: 768px) {
-  .schedule-grid {
-    /* Pasa de 4 columnas a 1 sola */
-    grid-template-columns: 1fr;
-  }
-
-  /* Ocultamos las cabeceras de los tracks, no tienen sentido en 1 col */
-  .schedule-header {
-    display: none;
-  }
-  .time-slot-header {
-    display: none; /* Ocultamos también la cabecera "Hora" */
-  }
-
-  /* El slot de tiempo ahora actúa como cabecera de su bloque */
-  .time-slot {
-    background-color: var(--primary-color);
-    color: var(--dark-bg);
-    border-radius: 5px 5px 0 0;
-    margin-top: 15px; /* Separa los bloques de tiempo */
-  }
-
-  .schedule-item {
-    /* Forzamos el ancho completo (ya que están en una columna) */
-    grid-column: 1 / -1 !important; /* Resetea cualquier 'span' */
-    border-left-width: 10px; /* Hacemos el borde más grueso */
-  }
-
-  /* Ajuste para el primer bloque de tiempo */
-  .schedule-grid .time-slot:first-of-type {
-    margin-top: 0;
-  }
-}
-
-/* --- 
-   Estilos Adicionales para 'sobre-nosotros.html' 
-   (Añadir al final de style.css) 
---- */
+/* SOBRE NOSOTROS */
 
 .about-page-content {
   padding: 60px 0;
@@ -608,10 +566,6 @@ img {
   font-weight: 700;
   margin-bottom: 15px;
 }
-/* --- 
-   Estilos Adicionales para 'ctf.html' 
-   (Añadir al final de style.css) 
---- */
 
 /* --- Sección Intro CTF --- */
 .ctf-intro-section {
