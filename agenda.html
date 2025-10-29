@@ -3,37 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agenda - RootedDEF CON</title>
+    <title>TROYANET - La Conferencia de Hacking Más Grande</title>
     <link rel="stylesheet" href="styles.css" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="icon" href="logo.png" type="image/x-icon" />
   </head>
   <body>
     <header class="main-header">
       <div class="container header-content">
         <div class="logo">
-          <a href="index.html">
-            <img
-              src="https://via.placeholder.com/50x50/0b84ff/000000?text=RDC"
-              alt="RootedDEF CON Logo"
-            />
-            <span>RootedDEF CON</span>
+          <a href="main.html">
+            <img src="logo.png" alt="TROYANET" />
+            <span>TROYANET</span>
           </a>
         </div>
         <nav class="main-nav">
           <ul>
-            <li><a href="index.html">Inicio</a></li>
+            <li><a href="main.html">Inicio</a></li>
             <li><a href="agenda.html" class="active">Agenda</a></li>
             <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
-            <li><a href="CTFs.html">CTF</a></li>
+            <li><a href="CTF.html">CTF</a></li>
           </ul>
         </nav>
-        <a href="tickets.html" class="btn btn-primary header-btn">Tickets</a>
+        <a href="#" class="btn btn-secondary header-btn">Tickets</a>
       </div>
     </header>
 
@@ -116,32 +107,50 @@
       </section>
     </main>
 
-    <footer class="main-footer">
-      <div class="container">
-        <p>&copy; 2024 RootedDEF CON. Todos los derechos reservados.</p>
-        <div class="social-links">
-          <a href="#">Twitter</a> | <a href="#">LinkedIn</a> |
-          <a href="#">Telegram</a>
+    <!-- footer -->
+    <footer class="footer">
+      <div>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/" title="Instagram">
+            <img
+              src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
+              alt="Instagram"
+            />
+          </a>
+          <a href="https://www.facebook.com/?locale=es_ES" title="Facebook">
+            <img
+              src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
+              alt="Facebook"
+            />
+          </a>
+          <a href="https://x.com/?lang=es" title="X">
+            <img
+              src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg"
+              alt="X"
+            />
+          </a>
+
+          <a href="https://www.youtube.com/?app=desktop&hl=es" title="YouTube">
+            <img
+              src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg"
+              alt="YouTube"
+            />
+          </a>
+          <a href="https://www.tiktok.com/es-419/" title="TikTok">
+            <img
+              src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg"
+              alt="TikTok"
+            />
+          </a>
         </div>
       </div>
+      <div>
+        <div class="links">
+          <a href="">Políticas de Privacidad</a>
+          <a href="">Terminos y Condiciones</a>
+        </div>
+        <p class="creditos">© 2025 TROYANET. Todos los derechos reservados</p>
+      </div>
     </footer>
-
-    <script>
-      // Este script es solo para simular la interactividad.
-      // En un proyecto real, las otras pestañas cargarían contenido
-      // o mostrarían otras secciones <section>
-      const tabs = document.querySelectorAll(".tab-btn");
-      tabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-          // Quitar 'active' de todas las pestañas
-          tabs.forEach((t) => t.classList.remove("active"));
-          // Añadir 'active' a la pestaña clickeada
-          tab.classList.add("active");
-
-          // (Aquí iría la lógica para mostrar/ocultar
-          // las agendas de #day-1-schedule, #day-2-schedule, etc.)
-        });
-      });
-    </script>
   </body>
 </html>
