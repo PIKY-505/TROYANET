@@ -1,20 +1,18 @@
-/* --- Variables de Estilo "Kali" --- */
-:root {
+/*  Estilos Globales  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   --primary-color: #0b84ff; /* Azul eléctrico "Kali" */
   --dark-bg: #000000; /* Fondo negro puro */
   --card-bg: #0a0a0a; /* Fondo de tarjeta (casi negro) */
   --light-text: #ffffff; /* Texto blanco */
   --gray-text: #aaaaaa; /* Texto gris/secundario */
   --border-color: #222222; /* Bordes sutiles */
-
-  --font-primary: "Chakra Petch", "Arial", sans-serif; /* Fuente Tech */
-}
-
-/* --- Reset Básico y Estilos Globales --- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  --kali-green: #2ecc71;
+  --kali-red: #e74c3c;
+  --kali-yellow: #f1c40f;
+  --font-primary: "Chakra Petch", "Arial", sans-serif; /* Fuentes */
 }
 
 body {
@@ -32,8 +30,6 @@ body {
 
 a {
   color: var(--primary-color);
-  text-decoration: none;
-  transition: color 0.3s ease;
 }
 
 a:hover {
@@ -76,7 +72,6 @@ img {
   padding: 12px 25px;
   border-radius: 5px;
   font-weight: 700;
-  font-family: var(--font-primary);
   text-align: center;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -84,21 +79,11 @@ img {
   text-transform: uppercase;
 }
 
-.btn-primary {
-  background-color: var(--primary-color);
-  color: var(--dark-bg);
-}
-
 .btn-primary:hover {
   background-color: #4da8ff;
   border-color: #4da8ff;
   box-shadow: 0 0 15px rgba(11, 132, 255, 0.7);
   transform: translateY(-2px);
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: var(--primary-color);
 }
 
 .btn-secondary:hover {
@@ -112,11 +97,11 @@ img {
   font-size: 1.1rem;
 }
 
-/* --- 1. Header [cite: 14] --- */
+/* Header */
 .main-header {
   background-color: var(--card-bg);
   padding: 15px 0;
-  position: sticky;
+  position: sticky; /* permite que el header baje contigo */
   top: 0;
   z-index: 1000;
   border-bottom: 2px solid var(--border-color);
@@ -134,8 +119,8 @@ img {
   align-items: center;
 }
 .logo img {
-  margin-right: 10px;
-  border-radius: 5px;
+  max-width: 55px;
+  max-height: 55px;
 }
 .logo span {
   font-size: 1.8rem;
@@ -189,7 +174,7 @@ img {
 .hero-section {
   /* Imagen de fondo "hacker" */
   background: url("https://images.pexels.com/photos/2007647/pexels-photo-2007647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
-    no-repeat center center/cover;
+    no-repeat center center/cover; /* no repeat evita efecto mosaico,cover hace que ocupe el 100% del div */
   height: 80vh;
   display: flex;
   align-items: center;
@@ -197,7 +182,9 @@ img {
   position: relative;
 }
 .hero-section::before {
-  /* Capa oscura */
+  /* Capa oscura hero section*/
+  /* z index actua como sistema de capas */
+  /*:before y content "" crean un pseudo objeto permitiendo crear las capas*/
   content: "";
   position: absolute;
   top: 0;
@@ -217,7 +204,7 @@ img {
   font-size: 4.5rem;
   margin-bottom: 10px;
   line-height: 1.1;
-  color: var(--primary-color); /* Título principal en azul */
+  color: var(--primary-color);
 }
 .hero-text h2 {
   font-size: 2.2rem;
@@ -306,6 +293,7 @@ img {
   border-radius: 50%;
   background-color: #111;
   padding: 10px;
+  max-height: 212px;
 }
 
 .highlight-item h3 {
@@ -327,104 +315,7 @@ img {
   text-decoration: underline;
 }
 
-/* CTA Banner */
-.cta-banner {
-  /* Degradado de negro a azul */
-  background: linear-gradient(90deg, #000000, #053a6e);
-  padding: 60px 0;
-  text-align: center;
-}
-.cta-banner h2 {
-  color: #fff;
-  margin-bottom: 15px;
-}
-.cta-banner p {
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto 30px auto;
-}
-
-/* --- 3. Footer [cite: 17] --- */
-.main-footer {
-  background-color: var(--card-bg);
-  color: var(--gray-text);
-  padding: 30px 0;
-  text-align: center;
-  font-size: 0.9rem;
-  border-top: 2px solid var(--border-color);
-}
-.main-footer p {
-  margin-bottom: 10px;
-}
-.social-links a {
-  color: var(--gray-text);
-  margin: 0 10px;
-}
-.social-links a:hover {
-  color: var(--primary-color);
-}
-
-/* --- Responsive (Media Queries) [cite: 25] --- */
-/* Para tabletas y móviles más pequeños */
-@media (max-width: 992px) {
-  .header-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  .main-nav ul {
-    margin: 20px 0;
-    justify-content: center;
-    flex-wrap: wrap; /* Para que quepa en móviles */
-    gap: 10px;
-  }
-  .main-nav ul li {
-    margin: 0 10px;
-  }
-  .header-btn {
-    margin-top: 15px;
-    margin-left: 0;
-  }
-  .hero-text h1 {
-    font-size: 3.5rem;
-  }
-  .hero-text h2 {
-    font-size: 1.8rem;
-  }
-  h2 {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-section {
-    height: 70vh;
-  }
-  .hero-text h1 {
-    font-size: 2.8rem;
-  }
-  .hero-text h2 {
-    font-size: 1.5rem;
-  }
-  .hero-text p {
-    font-size: 1rem;
-  }
-  /* Nota: No necesitamos media queries para `.highlight-grid`
-      porque `auto-fit` y `minmax` ya lo hacen responsive.
-      Esto demuestra el poder de las técnicas intrínsecas de Grid[cite: 25].
-    */
-}
-
-/* --- 
-   Estilos Adicionales para 'agenda.html' 
-   (Añadir al final de style.css) 
---- */
-
-/* --- Colores Adicionales para Tracks --- */
-:root {
-  --kali-green: #2ecc71; /* Verde "éxito" */
-  --kali-red: #e74c3c; /* Rojo "peligro" */
-  --kali-yellow: #f1c40f; /* Amarillo "aviso" */
-}
+/* AGENDA */
 
 /* --- Título de la Página --- */
 .page-title-section {
@@ -845,4 +736,57 @@ img {
   .ctf-column.prizes-list {
     margin-top: 40px; /* Espacio extra en móvil entre las dos listas */
   }
+}
+
+/* footer */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #000000;
+  padding: 30px 60px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  font-size: 18px;
+}
+.social-icons img {
+  width: 18px;
+  height: 18px;
+  filter: invert(1);
+}
+
+.social-icons a:hover {
+  background-color: #0b84ff;
+  transform: scale(1.1);
+}
+
+.links a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin: 0 5px;
+}
+
+.links a:hover {
+  color: #0b84ff;
+}
+
+.creditos {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 10px;
 }
