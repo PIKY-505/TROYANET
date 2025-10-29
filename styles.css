@@ -1,0 +1,848 @@
+/* --- Variables de Estilo "Kali" --- */
+:root {
+  --primary-color: #0b84ff; /* Azul eléctrico "Kali" */
+  --dark-bg: #000000; /* Fondo negro puro */
+  --card-bg: #0a0a0a; /* Fondo de tarjeta (casi negro) */
+  --light-text: #ffffff; /* Texto blanco */
+  --gray-text: #aaaaaa; /* Texto gris/secundario */
+  --border-color: #222222; /* Bordes sutiles */
+
+  --font-primary: "Chakra Petch", "Arial", sans-serif; /* Fuente Tech */
+}
+
+/* --- Reset Básico y Estilos Globales --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: var(--light-text);
+  background-color: var(--dark-bg);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #4da8ff; /* Azul más claro al pasar el ratón */
+}
+
+h1,
+h2,
+h3 {
+  color: var(--light-text);
+  margin-bottom: 20px;
+  font-weight: 700;
+  /* Efecto de "brillo" sutil */
+  text-shadow: 0 0 8px rgba(11, 132, 255, 0.3);
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+h2 {
+  font-size: 2.5rem;
+}
+h3 {
+  font-size: 1.8rem;
+}
+
+p {
+  margin-bottom: 15px;
+  color: var(--gray-text);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* --- Estilos de Botones --- */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-family: var(--font-primary);
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid var(--primary-color);
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--dark-bg);
+}
+
+.btn-primary:hover {
+  background-color: #4da8ff;
+  border-color: #4da8ff;
+  box-shadow: 0 0 15px rgba(11, 132, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: var(--dark-bg);
+  box-shadow: 0 0 15px rgba(11, 132, 255, 0.7);
+}
+
+.btn-large {
+  padding: 15px 35px;
+  font-size: 1.1rem;
+}
+
+/* --- 1. Header [cite: 14] --- */
+.main-header {
+  background-color: var(--card-bg);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid var(--border-color);
+  box-shadow: 0 2px 10px rgba(11, 132, 255, 0.2);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.logo span {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--light-text);
+}
+.logo a:hover {
+  color: var(--light-text); /* Evita que el logo cambie de color */
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+}
+.main-nav ul li {
+  margin-left: 30px;
+}
+.main-nav ul li a {
+  color: var(--gray-text);
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 5px 0;
+  position: relative;
+  text-transform: uppercase;
+}
+.main-nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 3px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+  color: var(--light-text);
+}
+.main-nav ul li a:hover::after,
+.main-nav ul li a.active::after {
+  width: 100%;
+}
+.header-btn {
+  margin-left: 30px;
+}
+
+/* --- 2. Main Content [cite: 15] --- */
+
+/* Hero Section */
+.hero-section {
+  /* Imagen de fondo "hacker" */
+  background: url("https://images.pexels.com/photos/2007647/pexels-photo-2007647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+    no-repeat center center/cover;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+.hero-section::before {
+  /* Capa oscura */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.hero-text h1 {
+  font-size: 4.5rem;
+  margin-bottom: 10px;
+  line-height: 1.1;
+  color: var(--primary-color); /* Título principal en azul */
+}
+.hero-text h2 {
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--light-text);
+  margin-bottom: 25px;
+}
+.hero-text p {
+  font-size: 1.2rem;
+  color: var(--gray-text);
+  margin-bottom: 40px;
+}
+.event-details {
+  margin-top: 30px;
+  font-size: 1.1rem;
+  color: var(--gray-text);
+}
+.event-details span {
+  margin: 0 10px;
+}
+
+/* About Section */
+.about-section {
+  padding: 80px 0;
+  background-color: var(--card-bg);
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+.about-section h2 {
+  color: var(--light-text);
+  margin-bottom: 30px;
+}
+.about-section p {
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  font-size: 1.1rem;
+  color: var(--gray-text);
+}
+
+/* --- Highlights Section (CSS GRID IMPLEMENTATION) --- */
+/* Esta sección cumple los requisitos de Grid [cite: 18] */
+.highlights-section {
+  padding: 80px 0;
+  background-color: var(--dark-bg);
+  text-align: center;
+}
+.highlights-section h2 {
+  color: var(--light-text);
+  margin-bottom: 50px;
+}
+
+.highlight-grid {
+  display: grid; /* [cite: 19] */
+
+  /* Uso de repeat(), auto-fit y minmax() [cite: 24]
+      para crear un grid responsive sin media queries[cite: 25].
+      Crea columnas que tienen un mínimo de 280px y un máximo de 1fr.
+      'auto-fit' colapsará las columnas vacías.
+    */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 25px; /* [cite: 19] */
+}
+
+.highlight-item {
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.highlight-item:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 20px rgba(11, 132, 255, 0.5);
+}
+
+.highlight-item img {
+  margin-bottom: 20px;
+  border-radius: 50%;
+  background-color: #111;
+  padding: 10px;
+}
+
+.highlight-item h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.highlight-item p {
+  color: var(--gray-text);
+  flex-grow: 1; /* Asegura que todas las tarjetas tengan la misma altura */
+  margin-bottom: 20px;
+}
+
+.link-more {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.link-more:hover {
+  text-decoration: underline;
+}
+
+/* CTA Banner */
+.cta-banner {
+  /* Degradado de negro a azul */
+  background: linear-gradient(90deg, #000000, #053a6e);
+  padding: 60px 0;
+  text-align: center;
+}
+.cta-banner h2 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+.cta-banner p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+}
+
+/* --- 3. Footer [cite: 17] --- */
+.main-footer {
+  background-color: var(--card-bg);
+  color: var(--gray-text);
+  padding: 30px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 2px solid var(--border-color);
+}
+.main-footer p {
+  margin-bottom: 10px;
+}
+.social-links a {
+  color: var(--gray-text);
+  margin: 0 10px;
+}
+.social-links a:hover {
+  color: var(--primary-color);
+}
+
+/* --- Responsive (Media Queries) [cite: 25] --- */
+/* Para tabletas y móviles más pequeños */
+@media (max-width: 992px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .main-nav ul {
+    margin: 20px 0;
+    justify-content: center;
+    flex-wrap: wrap; /* Para que quepa en móviles */
+    gap: 10px;
+  }
+  .main-nav ul li {
+    margin: 0 10px;
+  }
+  .header-btn {
+    margin-top: 15px;
+    margin-left: 0;
+  }
+  .hero-text h1 {
+    font-size: 3.5rem;
+  }
+  .hero-text h2 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 70vh;
+  }
+  .hero-text h1 {
+    font-size: 2.8rem;
+  }
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
+  /* Nota: No necesitamos media queries para `.highlight-grid`
+      porque `auto-fit` y `minmax` ya lo hacen responsive.
+      Esto demuestra el poder de las técnicas intrínsecas de Grid[cite: 25].
+    */
+}
+
+/* --- 
+   Estilos Adicionales para 'agenda.html' 
+   (Añadir al final de style.css) 
+--- */
+
+/* --- Colores Adicionales para Tracks --- */
+:root {
+  --kali-green: #2ecc71; /* Verde "éxito" */
+  --kali-red: #e74c3c; /* Rojo "peligro" */
+  --kali-yellow: #f1c40f; /* Amarillo "aviso" */
+}
+
+/* --- Título de la Página --- */
+.page-title-section {
+  padding: 50px 0;
+  text-align: center;
+  background-color: var(--card-bg);
+  border-bottom: 2px solid var(--border-color);
+}
+.page-title-section h1 {
+  color: var(--primary-color);
+  font-size: 3rem;
+}
+.page-title-section p {
+  font-size: 1.2rem;
+  color: var(--gray-text);
+}
+
+/* --- Selector de Pestañas (Días) --- */
+.day-selector-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 30px auto;
+}
+.tab-btn {
+  font-family: var(--font-primary);
+  background-color: transparent;
+  border: 2px solid var(--border-color);
+  color: var(--gray-text);
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+.tab-btn:hover {
+  color: var(--light-text);
+  border-color: var(--primary-color);
+}
+.tab-btn.active {
+  background-color: var(--primary-color);
+  color: var(--dark-bg);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 15px rgba(11, 132, 255, 0.7);
+}
+
+/* --- 
+   GRID: Estilos de la Agenda [cite: 18]
+   (Programa por Franjas)  
+--- */
+.schedule-section {
+  padding-bottom: 80px;
+}
+
+.schedule-grid {
+  display: grid; /* [cite: 19] */
+
+  /* Definición de Columnas: [cite: 19]
+      1. Columna de Hora (más pequeña)
+      2-4. Tres Tracks (flexibles, 1fr cada uno) [cite: 24]
+    */
+  grid-template-columns: 1fr 2fr 2fr 2fr;
+
+  /* Truco de Gap: El 'gap' revela el color de fondo 
+      del contenedor, creando las líneas de la cuadrícula. [cite: 19]
+    */
+  gap: 2px;
+  background-color: var(--border-color); /* Color de las líneas */
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden; /* Para que los bordes redondeados se apliquen */
+}
+
+/* Estilo para todas las celdas (cabeceras e ítems) */
+.schedule-header,
+.time-slot,
+.schedule-item {
+  background-color: var(--card-bg);
+  padding: 20px;
+}
+
+/* Cabeceras de la Agenda */
+.schedule-header {
+  background-color: #111; /* Un poco más oscuro */
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--light-text);
+  text-align: center;
+}
+.time-slot-header {
+  color: var(--gray-text);
+}
+
+/* Celda de la Hora */
+.time-slot {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--light-text);
+  text-align: center;
+  /* Alinear verticalmente (si las celdas crecen) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Celda de la Charla/Evento */
+.schedule-item {
+  /* Alineación interna */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+
+  /* Borde de color por Track */
+  border-left: 4px solid var(--gray-text);
+}
+.schedule-item h3 {
+  font-size: 1.2rem;
+  color: var(--light-text);
+  margin-bottom: 0;
+}
+.schedule-item span {
+  font-size: 0.9rem;
+  color: var(--gray-text);
+  font-style: italic;
+}
+
+/* Modificadores de Span (grid-column) [cite: 21] */
+.item-span-3 {
+  /* Ocupa 3 columnas */
+  grid-column: span 3;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Modificadores de Color por Track */
+.track-main {
+  border-left-color: var(--primary-color);
+}
+.schedule-header.track-main {
+  color: var(--primary-color);
+}
+
+.track-labs {
+  border-left-color: var(--kali-green);
+}
+.schedule-header.track-labs {
+  color: var(--kali-green);
+}
+
+.track-village {
+  border-left-color: var(--kali-red);
+}
+.schedule-header.track-village {
+  color: var(--kali-red);
+}
+
+.track-break {
+  border-left-color: var(--kali-yellow);
+}
+
+/* --- 
+   Responsive de la Agenda [cite: 25] 
+   En móviles, la cuadrícula 4-columnas no funciona.
+   La apilamos y usamos el 'time-slot' como cabecera.
+--- */
+@media (max-width: 768px) {
+  .schedule-grid {
+    /* Pasa de 4 columnas a 1 sola */
+    grid-template-columns: 1fr;
+  }
+
+  /* Ocultamos las cabeceras de los tracks, no tienen sentido en 1 col */
+  .schedule-header {
+    display: none;
+  }
+  .time-slot-header {
+    display: none; /* Ocultamos también la cabecera "Hora" */
+  }
+
+  /* El slot de tiempo ahora actúa como cabecera de su bloque */
+  .time-slot {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+    border-radius: 5px 5px 0 0;
+    margin-top: 15px; /* Separa los bloques de tiempo */
+  }
+
+  .schedule-item {
+    /* Forzamos el ancho completo (ya que están en una columna) */
+    grid-column: 1 / -1 !important; /* Resetea cualquier 'span' */
+    border-left-width: 10px; /* Hacemos el borde más grueso */
+  }
+
+  /* Ajuste para el primer bloque de tiempo */
+  .schedule-grid .time-slot:first-of-type {
+    margin-top: 0;
+  }
+}
+
+/* --- 
+   Estilos Adicionales para 'sobre-nosotros.html' 
+   (Añadir al final de style.css) 
+--- */
+
+.about-page-content {
+  padding: 60px 0;
+}
+
+/* Estilos para el texto de Misión/Filosofía */
+.mission-text {
+  max-width: 900px;
+  margin: 0 auto 60px auto;
+  text-align: center;
+  background-color: var(--card-bg);
+  padding: 30px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.mission-text h2 {
+  color: var(--light-text);
+  margin-bottom: 25px;
+}
+
+.mission-text p {
+  font-size: 1.1rem;
+  color: var(--gray-text);
+  line-height: 1.7;
+}
+
+/* Clase para resaltar texto clave */
+.mission-text .highlight {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* --- GRID: Sección del Equipo --- */
+.team-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.team-section h2 {
+  margin-bottom: 40px;
+}
+
+.team-grid {
+  display: grid;
+  /* De nuevo, usamos repeat(auto-fit, minmax())
+      para un layout de tarjetas responsive.
+    */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.team-member {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 15px rgba(11, 132, 255, 0.3);
+}
+
+.team-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%; /* Círculo perfecto */
+  border: 4px solid var(--primary-color);
+  margin: 0 auto 20px auto;
+}
+
+.team-member h3 {
+  color: var(--light-text);
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.team-role {
+  display: block;
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+/* --- 
+   Estilos Adicionales para 'ctf.html' 
+   (Añadir al final de style.css) 
+--- */
+
+/* --- Sección Intro CTF --- */
+.ctf-intro-section {
+  padding: 60px 0;
+  background-color: var(--dark-bg); /* Fondo principal */
+  text-align: center;
+}
+.ctf-intro-section .container {
+  max-width: 900px;
+}
+.ctf-intro-section h2 {
+  color: var(--light-text);
+  margin-bottom: 20px;
+}
+.ctf-intro-section p {
+  font-size: 1.1rem;
+  color: var(--gray-text);
+}
+.ctf-intro-section p strong {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* --- Banner de Acceso al CTF --- */
+.ctf-access-banner {
+  /* Reutiliza .cta-banner, pero con un fondo diferente */
+  background: linear-gradient(90deg, #053a6e, #000000);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* --- 
+   GRID: Reglas y Premios 
+--- */
+.ctf-details-section {
+  padding: 80px 0;
+  background-color: var(--dark-bg);
+}
+.ctf-details-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+
+.ctf-main-grid {
+  display: grid; /* */
+
+  /* 2 columnas de tamaño igual */
+  grid-template-columns: 1fr 1fr;
+
+  /* Espacio entre las columnas */
+  gap: 40px;
+}
+
+.ctf-column h3 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 25px;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 10px;
+}
+.icon-kali-blue {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* Estilo de las listas de reglas/premios */
+.ctf-column ul {
+  list-style: none; /* Quitamos los puntos por defecto */
+  padding-left: 0;
+}
+
+.ctf-column li {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  color: var(--gray-text);
+
+  /* Para el efecto "terminal" */
+  position: relative;
+  padding-left: 40px; /* Espacio para el icono */
+
+  transition: all 0.3s ease;
+}
+
+.ctf-column li:hover {
+  border-color: var(--primary-color);
+  color: var(--light-text);
+}
+
+/* Pseudo-elemento "terminal" */
+.ctf-column li::before {
+  content: ">"; /* Símbolo tipo prompt */
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.ctf-column li code {
+  background-color: #222;
+  padding: 2px 5px;
+  border-radius: 3px;
+  color: var(--kali-green); /* Reutilizando un color */
+  font-family: monospace;
+}
+.ctf-column li strong {
+  color: var(--light-text);
+}
+
+/* --- Responsive del Grid de CTF --- */
+@media (max-width: 768px) {
+  .ctf-main-grid {
+    /* Apilamos las columnas en móvil */
+    grid-template-columns: 1fr;
+  }
+
+  .ctf-column.prizes-list {
+    margin-top: 40px; /* Espacio extra en móvil entre las dos listas */
+  }
+}

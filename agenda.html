@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agenda - RootedDEF CON</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="container header-content">
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="https://via.placeholder.com/50x50/0b84ff/000000?text=RDC"
+              alt="RootedDEF CON Logo"
+            />
+            <span>RootedDEF CON</span>
+          </a>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="agenda.html" class="active">Agenda</a></li>
+            <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+            <li><a href="CTFs.html">CTF</a></li>
+          </ul>
+        </nav>
+        <a href="tickets.html" class="btn btn-primary header-btn">Tickets</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-title-section">
+        <div class="container">
+          <h1>Agenda Oficial</h1>
+          <p>
+            // Horarios sujetos a cambios. Revisa las pantallas del evento._
+          </p>
+        </div>
+      </section>
+
+      <div class="day-selector-tabs container">
+        <button class="tab-btn active" data-day="day-1">Día 1 (15 Nov)</button>
+        <button class="tab-btn" data-day="day-2">Día 2 (16 Nov)</button>
+        <button class="tab-btn" data-day="day-3">Día 3 (17 Nov)</button>
+      </div>
+
+      <section class_name="schedule-section container" id="day-1-schedule">
+        <div class="schedule-grid">
+          <div class="schedule-header time-slot-header">Hora</div>
+          <div class="schedule-header track-main">Main Track (Audit.)</div>
+          <div class="schedule-header track-labs">Workshops (Labs)</div>
+          <div class="schedule-header track-village">Hacker Village</div>
+
+          <div class="time-slot">09:00 - 10:00</div>
+          <div class="schedule-item item-span-3 track-main">
+            <h3>Keynote de Apertura: El Estado del Hacking</h3>
+            <span>Por: 'CyberMentor' (Anunciado)</span>
+          </div>
+
+          <div class="time-slot">10:00 - 11:30</div>
+          <div class="schedule-item track-main">
+            <h3>Explotando el Kernel de Windows</h3>
+            <span>Por: Ana García</span>
+          </div>
+          <div class="schedule-item track-labs">
+            <h3>Taller: Introducción a OSINT</h3>
+            <span>Por: David Ruiz (Plazas limitadas)</span>
+          </div>
+          <div class="schedule-item track-village">
+            <h3>Apertura del CTF y Lockpicking Zone</h3>
+            <span>Actividad continua</span>
+          </div>
+
+          <div class="time-slot">11:30 - 13:00</div>
+          <div class="schedule-item track-main">
+            <h3>Análisis Forense en Redes IoT</h3>
+            <span>Por: Laura Chen</span>
+          </div>
+          <div class="schedule-item track-labs">
+            <h3>Taller: OSINT (Continuación)</h3>
+            <span>Por: David Ruiz</span>
+          </div>
+          <div class="schedule-item track-village">
+            <h3>Charla Relámpago: Mi primer Bug Bounty</h3>
+            <span>Por: 'RookieHacker'</span>
+          </div>
+
+          <div class="time-slot">13:00 - 14:00</div>
+          <div class="schedule-item item-span-3 track-break">
+            <h3>Descanso para Comer (Networking Lunch)</h3>
+          </div>
+
+          <div class="time-slot">14:00 - 15:30</div>
+          <div class="schedule-item track-main">
+            <h3>Rompiendo Cadenas de Suministro (Supply Chain)</h3>
+            <span>Por: Michael Lee</span>
+          </div>
+          <div class="schedule-item track-labs">
+            <h3>Taller: Hacking de APIs REST</h3>
+            <span>Por: 'API_Ninja' (Plazas limitadas)</span>
+          </div>
+          <div class="schedule-item track-village">
+            <h3>Taller: Soldadura de Badges</h3>
+            <span>Actividad continua</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="container">
+        <p>&copy; 2024 RootedDEF CON. Todos los derechos reservados.</p>
+        <div class="social-links">
+          <a href="#">Twitter</a> | <a href="#">LinkedIn</a> |
+          <a href="#">Telegram</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Este script es solo para simular la interactividad.
+      // En un proyecto real, las otras pestañas cargarían contenido
+      // o mostrarían otras secciones <section>
+      const tabs = document.querySelectorAll(".tab-btn");
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          // Quitar 'active' de todas las pestañas
+          tabs.forEach((t) => t.classList.remove("active"));
+          // Añadir 'active' a la pestaña clickeada
+          tab.classList.add("active");
+
+          // (Aquí iría la lógica para mostrar/ocultar
+          // las agendas de #day-1-schedule, #day-2-schedule, etc.)
+        });
+      });
+    </script>
+  </body>
+</html>
