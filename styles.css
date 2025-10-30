@@ -3,23 +3,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  --primary-color: #0b84ff; /* Azul eléctrico "Kali" */
-  --dark-bg: #000000; /* Fondo negro puro */
-  --card-bg: #0a0a0a; /* Fondo de tarjeta (casi negro) */
-  --light-text: #ffffff; /* Texto blanco */
-  --gray-text: #aaaaaa; /* Texto gris/secundario */
-  --border-color: #222222; /* Bordes sutiles */
-  --kali-green: #2ecc71;
-  --kali-red: #e74c3c;
-  --kali-yellow: #f1c40f;
-  --font-primary: "Chakra Petch", "Arial", sans-serif; /* Fuentes */
+  --azul-elec-kali: #0b84ff; /* Azul eléctrico "Kali" */
+  --fullnegro: #000000; /* Fondo negro puro */
+  --casinegro: #0a0a0a; /* Fondo de tarjeta (casi negro) */
+  --textoblan: #ffffff; /* Texto blanco */
+  --textogris: #aaaaaa; /* Texto gris/secundario */
+  --bordes: #222222; /* Bordes sutiles */
+  --verde: #2ecc71;
+  --rojo: #e74c3c;
+  --amarillo: #f1c40f;
+  --letra: "Chakra Petch", "Arial", sans-serif; /* Fuentes */
 }
 
 body {
-  font-family: var(--font-primary);
+  font-family: var(--letra);
   line-height: 1.6;
-  color: var(--light-text);
-  background-color: var(--dark-bg);
+  color: var(--textoblan);
+  background-color: var(--fullnegro);
 }
 
 .container {
@@ -29,7 +29,7 @@ body {
 }
 
 a {
-  color: var(--primary-color);
+  color: var(--azul-elec-kali);
 }
 
 a:hover {
@@ -39,7 +39,7 @@ a:hover {
 h1,
 h2,
 h3 {
-  color: var(--light-text);
+  color: var(--textoblan);
   margin-bottom: 20px;
   font-weight: 700;
   /* Efecto de "brillo" sutil */
@@ -58,7 +58,7 @@ h3 {
 
 p {
   margin-bottom: 15px;
-  color: var(--gray-text);
+  color: var(--textogris);
 }
 
 img {
@@ -75,7 +75,7 @@ img {
   text-align: center;
   transition: all 0.3s ease;
   cursor: pointer;
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--azul-elec-kali);
   text-transform: uppercase;
 }
 
@@ -87,8 +87,8 @@ img {
 }
 
 .btn-secondary:hover {
-  background-color: var(--primary-color);
-  color: var(--dark-bg);
+  background-color: var(--azul-elec-kali);
+  color: var(--fullnegro);
   box-shadow: 0 0 15px rgba(11, 132, 255, 0.7);
 }
 
@@ -99,12 +99,12 @@ img {
 
 /* Header */
 .main-header {
-  background-color: var(--card-bg);
+  background-color: var(--casinegro);
   padding: 15px 0;
   position: sticky; /* permite que el header baje contigo */
   top: 0;
   z-index: 1000;
-  border-bottom: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--bordes);
   box-shadow: 0 2px 10px rgba(11, 132, 255, 0.2);
 }
 
@@ -125,10 +125,10 @@ img {
 .logo span {
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--light-text);
+  color: var(--textoblan);
 }
 .logo a:hover {
-  color: var(--light-text); /* Evita que el logo cambie de color */
+  color: var(--textoblan); /* Evita que el logo cambie de color */
 }
 
 .main-nav ul {
@@ -139,7 +139,7 @@ img {
   margin-left: 30px;
 }
 .main-nav ul li a {
-  color: var(--gray-text);
+  color: var(--textogris);
   font-weight: 500;
   font-size: 1.1rem;
   padding: 5px 0;
@@ -153,12 +153,12 @@ img {
   bottom: -5px;
   width: 0;
   height: 3px;
-  background-color: var(--primary-color);
+  background-color: var(--azul-elec-kali);
   transition: width 0.3s ease;
 }
 .main-nav ul li a:hover,
 .main-nav ul li a.active {
-  color: var(--light-text);
+  color: var(--textoblan);
 }
 .main-nav ul li a:hover::after,
 .main-nav ul li a.active::after {
@@ -203,23 +203,23 @@ img {
   font-size: 4.5rem;
   margin-bottom: 10px;
   line-height: 1.1;
-  color: var(--primary-color);
+  color: var(--azul-elec-kali);
 }
 .hero-text h2 {
   font-size: 2.2rem;
   font-weight: 400;
-  color: var(--light-text);
+  color: var(--textoblan);
   margin-bottom: 25px;
 }
 .hero-text p {
   font-size: 1.2rem;
-  color: var(--gray-text);
+  color: var(--textogris);
   margin-bottom: 40px;
 }
 .event-details {
   margin-top: 30px;
   font-size: 1.1rem;
-  color: var(--gray-text);
+  color: var(--textogris);
 }
 .event-details span {
   margin: 0 10px;
@@ -228,28 +228,28 @@ img {
 /* About Section */
 .about-section {
   padding: 80px 0;
-  background-color: var(--card-bg);
+  background-color: var(--casinegro);
   text-align: center;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--bordes);
 }
 .about-section h2 {
-  color: var(--light-text);
+  color: var(--textoblan);
   margin-bottom: 30px;
 }
 .about-section p {
   max-width: 800px;
   margin: 0 auto 30px auto;
   font-size: 1.1rem;
-  color: var(--gray-text);
+  color: var(--textogris);
 }
 
 .highlights-section {
   padding: 80px 0;
-  background-color: var(--dark-bg);
+  background-color: var(--fullnegro);
   text-align: center;
 }
 .highlights-section h2 {
-  color: var(--light-text);
+  color: var(--textoblan);
   margin-bottom: 50px;
 }
 
@@ -267,10 +267,10 @@ img {
 }
 
 .highlight-item {
-  background-color: var(--card-bg);
+  background-color: var(--casinegro);
   padding: 30px;
   border-radius: 8px;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--bordes);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   text-align: center;
   display: flex;
@@ -281,7 +281,7 @@ img {
 
 .highlight-item:hover {
   transform: translateY(-8px);
-  border-color: var(--primary-color);
+  border-color: var(--azul-elec-kali);
   box-shadow: 0 0 20px rgba(11, 132, 255, 0.5);
 }
 
@@ -294,12 +294,12 @@ img {
 }
 
 .highlight-item h3 {
-  color: var(--primary-color);
+  color: var(--azul-elec-kali);
   margin-bottom: 15px;
 }
 
 .highlight-item p {
-  color: var(--gray-text);
+  color: var(--textogris);
   flex-grow: 1; /* Asegura que todas las tarjetas tengan la misma altura */
   margin-bottom: 20px;
 }
@@ -317,16 +317,16 @@ img {
 .page-title-section {
   padding: 50px 0;
   text-align: center;
-  background-color: var(--card-bg);
-  border-bottom: 2px solid var(--border-color);
+  background-color: var(--casinegro);
+  border-bottom: 2px solid var(--bordes);
 }
 .page-title-section h1 {
-  color: var(--primary-color);
+  color: var(--azul-elec-kali);
   font-size: 3rem;
 }
 .page-title-section p {
   font-size: 1.2rem;
-  color: var(--gray-text);
+  color: var(--textogris);
 }
 
 /* --- Selector de Pestañas (Días) --- */
@@ -337,10 +337,10 @@ img {
   margin: 30px auto;
 }
 .tab-btn {
-  font-family: var(--font-primary);
+  font-family: var(--letra);
   background-color: transparent;
-  border: 2px solid var(--border-color);
-  color: var(--gray-text);
+  border: 2px solid var(--bordes);
+  color: var(--textogris);
   padding: 10px 20px;
   font-size: 1.1rem;
   font-weight: 700;
@@ -349,13 +349,13 @@ img {
   border-radius: 5px;
 }
 .tab-btn:hover {
-  color: var(--light-text);
-  border-color: var(--primary-color);
+  color: var(--textoblan);
+  border-color: var(--azul-elec-kali);
 }
 .tab-btn.active {
-  background-color: var(--primary-color);
-  color: var(--dark-bg);
-  border-color: var(--primary-color);
+  background-color: var(--azul-elec-kali);
+  color: var(--fullnegro);
+  border-color: var(--azul-elec-kali);
   box-shadow: 0 0 15px rgba(11, 132, 255, 0.7);
 }
 
@@ -372,8 +372,8 @@ img {
   grid-template-columns: 1fr 2fr 2fr 2fr;
 
   gap: 2px;
-  background-color: var(--border-color);
-  border: 2px solid var(--border-color);
+  background-color: var(--bordes);
+  border: 2px solid var(--bordes);
   border-radius: 8px;
   overflow: hidden; /* Para que los bordes redondeados se apliquen */
 }
@@ -382,7 +382,7 @@ img {
 .schedule-header,
 .time-slot,
 .schedule-item {
-  background-color: var(--card-bg);
+  background-color: var(--casinegro);
   padding: 20px;
 }
 
@@ -391,18 +391,18 @@ img {
   background-color: #111;
   font-weight: 700;
   font-size: 1.2rem;
-  color: var(--light-text);
+  color: var(--textoblan);
   text-align: center;
 }
 .time-slot-header {
-  color: var(--gray-text);
+  color: var(--textogris);
 }
 
 /* Celda de la Hora */
 .time-slot {
   font-weight: 700;
   font-size: 1.1rem;
-  color: var(--light-text);
+  color: var(--textoblan);
   text-align: center;
   display: flex;
   align-items: center;
@@ -417,16 +417,16 @@ img {
   gap: 5px;
 
   /* Borde de color calendario */
-  border-left: 4px solid var(--gray-text);
+  border-left: 4px solid var(--textogris);
 }
 .schedule-item h3 {
   font-size: 1.2rem;
-  color: var(--light-text);
+  color: var(--textoblan);
   margin-bottom: 0;
 }
 .schedule-item span {
   font-size: 0.9rem;
-  color: var(--gray-text);
+  color: var(--textogris);
   font-style: italic;
 }
 
@@ -438,28 +438,28 @@ img {
 }
 
 .track-main {
-  border-left-color: var(--primary-color);
+  border-left-color: var(--azul-elec-kali);
 }
 .schedule-header.track-main {
-  color: var(--primary-color);
+  color: var(--azul-elec-kali);
 }
 
 .track-labs {
-  border-left-color: var(--kali-green);
+  border-left-color: var(--verde);
 }
 .schedule-header.track-labs {
-  color: var(--kali-green);
+  color: var(--verde);
 }
 
 .track-village {
-  border-left-color: var(--kali-red);
+  border-left-color: var(--rojo);
 }
 .schedule-header.track-village {
-  color: var(--kali-red);
+  color: var(--rojo);
 }
 
 .track-break {
-  border-left-color: var(--kali-yellow);
+  border-left-color: var(--amarillo);
 }
 
 /* SOBRE NOSOTROS */
@@ -472,25 +472,25 @@ img {
   max-width: 900px;
   margin: 0 auto 60px auto;
   text-align: center;
-  background-color: var(--card-bg);
+  background-color: var(--casinegro);
   padding: 30px;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--bordes);
   border-radius: 8px;
 }
 
 .mission-text h2 {
-  color: var(--light-text);
+  color: var(--textoblan);
   margin-bottom: 25px;
 }
 
 .mission-text p {
   font-size: 1.1rem;
-  color: var(--gray-text);
+  color: var(--textogris);
   line-height: 1.7;
 }
 
 .mission-text .highlight {
-  color: var(--primary-color);
+  color: var(--azul-elec-kali);
   font-weight: 700;
 }
 
@@ -515,8 +515,8 @@ img {
 }
 
 .team-member {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
+  background-color: var(--casinegro);
+  border: 1px solid var(--bordes);
   border-radius: 8px;
   padding: 25px;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
@@ -524,7 +524,7 @@ img {
 
 .team-member:hover {
   transform: translateY(-5px);
-  border-color: var(--primary-color);
+  border-color: var(--azul-elec-kali);
   box-shadow: 0 0 15px rgba(11, 132, 255, 0.3);
 }
 
@@ -532,19 +532,19 @@ img {
   width: 120px;
   height: 120px;
   border-radius: 50%; /* Círculo perfecto */
-  border: 4px solid var(--primary-color);
+  border: 4px solid var(--azul-elec-kali);
   margin: 0 auto 20px auto;
 }
 
 .team-member h3 {
-  color: var(--light-text);
+  color: var(--textoblan);
   font-size: 1.5rem;
   margin-bottom: 5px;
 }
 
 .team-role {
   display: block;
-  color: var(--primary-color);
+  color: var(--azul-elec-kali);
   font-weight: 700;
   margin-bottom: 15px;
 }
@@ -552,30 +552,30 @@ img {
 /* --- Sección Intro CTF --- */
 .ctf-intro-section {
   padding: 60px 0;
-  background-color: var(--dark-bg); /* Fondo principal */
+  background-color: var(--fullnegro); /* Fondo principal */
   text-align: center;
 }
 .ctf-intro-section .container {
   max-width: 900px;
 }
 .ctf-intro-section h2 {
-  color: var(--light-text);
+  color: var(--textoblan);
   margin-bottom: 20px;
 }
 .ctf-intro-section p {
   font-size: 1.1rem;
-  color: var(--gray-text);
+  color: var(--textogris);
 }
 .ctf-intro-section p strong {
-  color: var(--primary-color);
+  color: var(--azul-elec-kali);
   font-weight: 700;
 }
 
 /* --- Banner de Acceso al CTF --- */
 .ctf-access-banner {
   background: linear-gradient(90deg, #053a6e, #000000);
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+  border-top: 1px solid var(--bordes);
+  border-bottom: 1px solid var(--bordes);
 }
 
 /* --- 
@@ -583,7 +583,7 @@ img {
 --- */
 .ctf-details-section {
   padding: 80px 0;
-  background-color: var(--dark-bg);
+  background-color: var(--fullnegro);
 }
 .ctf-details-section h2 {
   text-align: center;
@@ -599,13 +599,13 @@ img {
 
 .ctf-column h3 {
   font-size: 1.8rem;
-  color: var(--primary-color);
+  color: var(--azul-elec-kali);
   margin-bottom: 25px;
-  border-bottom: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--bordes);
   padding-bottom: 10px;
 }
 .icon-kali-blue {
-  color: var(--primary-color);
+  color: var(--azul-elec-kali);
   font-weight: 700;
 }
 
@@ -616,13 +616,13 @@ img {
 }
 
 .ctf-column li {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
+  background-color: var(--casinegro);
+  border: 1px solid var(--bordes);
   padding: 15px 20px;
   margin-bottom: 12px;
   border-radius: 5px;
   font-size: 1.1rem;
-  color: var(--gray-text);
+  color: var(--textogris);
 
   /* Para el efecto "terminal" */
   position: relative;
@@ -631,8 +631,8 @@ img {
 }
 
 .ctf-column li:hover {
-  border-color: var(--primary-color);
-  color: var(--light-text);
+  border-color: var(--azul-elec-kali);
+  color: var(--textoblan);
 }
 
 /* Pseudo-elemento "terminal",permite colocar obhetos sobre objetos */
@@ -641,7 +641,7 @@ img {
   position: absolute;
   left: 15px;
   top: 15px;
-  color: var(--primary-color);
+  color: var(--azul-elec-kali);
   font-weight: 700;
 }
 
@@ -649,11 +649,11 @@ img {
   background-color: #222;
   padding: 2px 5px;
   border-radius: 3px;
-  color: var(--kali-green);
+  color: var(--verde);
   font-family: monospace;
 }
 .ctf-column li strong {
-  color: var(--light-text);
+  color: var(--textoblan);
 }
 
 /* footer */
@@ -708,3 +708,4 @@ img {
   color: rgba(255, 255, 255, 0.5);
   margin-top: 10px;
 }
+
