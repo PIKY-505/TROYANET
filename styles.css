@@ -168,9 +168,8 @@ img {
   margin-left: 30px;
 }
 
-/* --- 2. Main Content [cite: 15] --- */
-
 /* Hero Section */
+
 .hero-section {
   /* Imagen de fondo "hacker" */
   background: url("https://images.pexels.com/photos/2007647/pexels-photo-2007647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
@@ -244,8 +243,6 @@ img {
   color: var(--gray-text);
 }
 
-/* --- Highlights Section (CSS GRID IMPLEMENTATION) --- */
-/* Esta sección cumple los requisitos de Grid [cite: 18] */
 .highlights-section {
   padding: 80px 0;
   background-color: var(--dark-bg);
@@ -257,16 +254,16 @@ img {
 }
 
 .highlight-grid {
-  display: grid; /* [cite: 19] */
+  display: grid;
 
   /* Uso de repeat(), auto-fit y minmax() [cite: 24]
-      para crear un grid responsive sin media queries[cite: 25].
+      para crear un grid adaptativo.
       Crea columnas que tienen un mínimo de 280px y un máximo de 1fr.
-      'auto-fit' colapsará las columnas vacías.
+      auto-fit eleimina´ra las columnas vacías.
     */
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 
-  gap: 25px; /* [cite: 19] */
+  gap: 25px;
 }
 
 .highlight-item {
@@ -317,7 +314,6 @@ img {
 
 /* AGENDA */
 
-/* --- Título de la Página --- */
 .page-title-section {
   padding: 50px 0;
   text-align: center;
@@ -364,7 +360,7 @@ img {
 }
 
 /* --- 
-   GRID: Estilos de la Agenda [cite: 18]
+   GRID: Estilos de la Agenda
    (Programa por Franjas)  
 --- */
 .schedule-section {
@@ -372,19 +368,11 @@ img {
 }
 
 .schedule-grid {
-  display: grid; /* [cite: 19] */
-
-  /* Definición de Columnas: [cite: 19]
-      1. Columna de Hora (más pequeña)
-      2-4. Tres Tracks (flexibles, 1fr cada uno) [cite: 24]
-    */
+  display: grid;
   grid-template-columns: 1fr 2fr 2fr 2fr;
 
-  /* Truco de Gap: El 'gap' revela el color de fondo 
-      del contenedor, creando las líneas de la cuadrícula. [cite: 19]
-    */
   gap: 2px;
-  background-color: var(--border-color); /* Color de las líneas */
+  background-color: var(--border-color);
   border: 2px solid var(--border-color);
   border-radius: 8px;
   overflow: hidden; /* Para que los bordes redondeados se apliquen */
@@ -400,7 +388,7 @@ img {
 
 /* Cabeceras de la Agenda */
 .schedule-header {
-  background-color: #111; /* Un poco más oscuro */
+  background-color: #111;
   font-weight: 700;
   font-size: 1.2rem;
   color: var(--light-text);
@@ -416,7 +404,6 @@ img {
   font-size: 1.1rem;
   color: var(--light-text);
   text-align: center;
-  /* Alinear verticalmente (si las celdas crecen) */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -424,13 +411,12 @@ img {
 
 /* Celda de la Charla/Evento */
 .schedule-item {
-  /* Alineación interna */
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
 
-  /* Borde de color por Track */
+  /* Borde de color calendario */
   border-left: 4px solid var(--gray-text);
 }
 .schedule-item h3 {
@@ -444,7 +430,6 @@ img {
   font-style: italic;
 }
 
-/* Modificadores de Span (grid-column) [cite: 21] */
 .item-span-3 {
   /* Ocupa 3 columnas */
   grid-column: span 3;
@@ -452,7 +437,6 @@ img {
   font-style: italic;
 }
 
-/* Modificadores de Color por Track */
 .track-main {
   border-left-color: var(--primary-color);
 }
@@ -484,7 +468,6 @@ img {
   padding: 60px 0;
 }
 
-/* Estilos para el texto de Misión/Filosofía */
 .mission-text {
   max-width: 900px;
   margin: 0 auto 60px auto;
@@ -506,7 +489,6 @@ img {
   line-height: 1.7;
 }
 
-/* Clase para resaltar texto clave */
 .mission-text .highlight {
   color: var(--primary-color);
   font-weight: 700;
@@ -591,7 +573,6 @@ img {
 
 /* --- Banner de Acceso al CTF --- */
 .ctf-access-banner {
-  /* Reutiliza .cta-banner, pero con un fondo diferente */
   background: linear-gradient(90deg, #053a6e, #000000);
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
@@ -611,12 +592,8 @@ img {
 }
 
 .ctf-main-grid {
-  display: grid; /* */
-
-  /* 2 columnas de tamaño igual */
+  display: grid;
   grid-template-columns: 1fr 1fr;
-
-  /* Espacio entre las columnas */
   gap: 40px;
 }
 
@@ -634,7 +611,7 @@ img {
 
 /* Estilo de las listas de reglas/premios */
 .ctf-column ul {
-  list-style: none; /* Quitamos los puntos por defecto */
+  list-style: none; /* Quitamos los puntos por defecto que se generan al generar como lista*/
   padding-left: 0;
 }
 
@@ -650,7 +627,6 @@ img {
   /* Para el efecto "terminal" */
   position: relative;
   padding-left: 40px; /* Espacio para el icono */
-
   transition: all 0.3s ease;
 }
 
@@ -659,9 +635,9 @@ img {
   color: var(--light-text);
 }
 
-/* Pseudo-elemento "terminal" */
+/* Pseudo-elemento "terminal",permite colocar obhetos sobre objetos */
 .ctf-column li::before {
-  content: ">"; /* Símbolo tipo prompt */
+  content: ">";
   position: absolute;
   left: 15px;
   top: 15px;
@@ -673,23 +649,11 @@ img {
   background-color: #222;
   padding: 2px 5px;
   border-radius: 3px;
-  color: var(--kali-green); /* Reutilizando un color */
+  color: var(--kali-green);
   font-family: monospace;
 }
 .ctf-column li strong {
   color: var(--light-text);
-}
-
-/* --- Responsive del Grid de CTF --- */
-@media (max-width: 768px) {
-  .ctf-main-grid {
-    /* Apilamos las columnas en móvil */
-    grid-template-columns: 1fr;
-  }
-
-  .ctf-column.prizes-list {
-    margin-top: 40px; /* Espacio extra en móvil entre las dos listas */
-  }
 }
 
 /* footer */
